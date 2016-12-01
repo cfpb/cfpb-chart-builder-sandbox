@@ -20,16 +20,17 @@
     "cfpb-chart-builder-sandbox"
   ],
   "dependencies": {
-    "cf-forms": "^3.1.2",
-    "cf-icons": "^3.2.1",
+    "cf-buttons": "^3.2.0",
     "cf-core": "^3.5.0",
     "cf-expandables": "^3.1.0",
-    "cf-tables": "^1.1.0",
+    "cf-forms": "^3.1.2",
     "cf-grid": "^3.2.0",
-    "cf-typography": "^3.1.0",
-    "cf-buttons": "^3.2.0",
-    "cf-pagination": "^3.1.1",
+    "cf-icons": "^3.2.1",
     "cf-layout": "^3.2.2",
+    "cf-pagination": "^3.1.1",
+    "cf-tables": "^1.1.0",
+    "cf-typography": "^3.1.0",
+    "cfpb-chart-builder": "0.0.1",
     "html5shiv": "3.7.3"
   },
   "devDependencies": {

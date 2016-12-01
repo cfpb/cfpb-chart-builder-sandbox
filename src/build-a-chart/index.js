@@ -1,6 +1,6 @@
 'use strict';
 
-var chartBuilder = require( '../../../cfpb-chart-builder/index.js' );
+var chartBuilder = require( 'cfpb-chart-builder' );
 
 var data = [
   { date: '2009-01-01', amount: -40 },
@@ -104,6 +104,64 @@ var moreData = [
   { date: '2010-12-01', amount: 1 }
 ];
 
+var tileData = [
+  { state: 'AK', value: .82 },
+  { state: 'AL', value: .77 },
+  { state: 'AR', value: .65 },
+  { state: 'AZ', value: .62 },
+  { state: 'CA', value: .51 },
+  { state: 'CO', value: .53 },
+  { state: 'CT', value: .410 },
+  { state: 'DC', value: .69 },
+  { state: 'DE', value: .510 },
+  { state: 'FL', value: .8 },
+  { state: 'GA', value: .78 },
+  { state: 'HI', value: .81 },
+  { state: 'IA', value: .45 },
+  { state: 'ID', value: .32 },
+  { state: 'IL', value: .36 },
+  { state: 'IN', value: .46 },
+  { state: 'KS', value: .64 },
+  { state: 'KY', value: .56 },
+  { state: 'LA', value: .75 },
+  { state: 'MA', value: .310 },
+  { state: 'MD', value: .59 },
+  { state: 'ME', value: .111 },
+  { state: 'MI', value: .37 },
+  { state: 'MN', value: .35 },
+  { state: 'MO', value: .55 },
+  { state: 'MS', value: .76 },
+  { state: 'MT', value: .33 },
+  { state: 'NC', value: .67 },
+  { state: 'ND', value: .34 },
+  { state: 'NE', value: .54 },
+  { state: 'NH', value: .211 },
+  { state: 'NJ', value: .49 },
+  { state: 'NM', value: .63 },
+  { state: 'NV', value: .42 },
+  { state: 'NY', value: .39 },
+  { state: 'OH', value: .47 },
+  { state: 'OK', value: .74 },
+  { state: 'OR', value: .41 },
+  { state: 'PA', value: .48 },
+  { state: 'RI', value: .411 },
+  { state: 'SC', value: .33 },
+  { state: 'SD', value: .44 },
+  { state: 'TN', value: .66 },
+  { state: 'TX', value: .84 },
+  { state: 'UT', value: .52 },
+  { state: 'VA', value: .58 },
+  { state: 'VT', value: .210 },
+  { state: 'WA', value: .31 },
+  { state: 'WI', value: .26 },
+  { state: 'WV', value: .57 },
+  { state: 'WY', value: .43 }
+];
+
+// ***----***
+// First bar chart
+// ***----***
+
 var properties = {
   data: data,
   selector: '#bars'
@@ -120,7 +178,12 @@ var options = {
   }
 }
 
-var graph = someBars.drawGraph( options );
+var barGraphAlpha = someBars.drawGraph( options );
+
+
+// ***----***
+// Second bar chart
+// ***----***
 
 var moreProperties = {
   data: moreData,
@@ -138,4 +201,28 @@ var moreOptions = {
   }
 }
 
-var graph = morebars.drawGraph( moreOptions );
+var barGraphBeta = morebars.drawGraph( moreOptions );
+
+// ***----***
+// tileMap
+// ***----***
+
+var tileMapProps = {
+  data: tileData,
+  selector: '#tileMap'
+}
+
+var tileMap = new chartBuilder.tileMap( tileMapProps );
+
+var tileMapOptions = {
+  baseWidth: 650,
+  baseHeight: 650,
+  paddingDecimal: .1,
+  margin: {
+    top: 20, right: 20, bottom: 20, left: 20
+  }
+}
+
+var tileMapChart = tileMap.drawGraph( tileMapOptions );
+
+
